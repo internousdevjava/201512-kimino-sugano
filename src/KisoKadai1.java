@@ -15,6 +15,7 @@ public class KisoKadai1 {
 	 */
 	public static void main(String[] args) {
 		System.out.println("『九九の計算』");
+		//x*yのループ文
 		for(int x=1;x<=100;x++){
 			for(int y=1;y<=100;y++){
 				System.out.print(x*y+"\t");
