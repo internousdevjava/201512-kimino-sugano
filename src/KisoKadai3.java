@@ -22,6 +22,7 @@ public class KisoKadai3{
 	 * @param <SSample1_1>
 	 * @param args
 	 */
+	@SuppressWarnings("unused")
 	public static <SSample1_1> void main(String[] args) throws IOException {
 		String str;
 		String file_name;
@@ -31,7 +32,7 @@ public class KisoKadai3{
 		boolean flag = true;
 		while (flag) {
 			System.out.println("実行メニューを選択してください");
-			System.out.println("[1]:読み込み,[2]:書き込み,[3]:新規作成,[4]:一覧表示,[9]終了");
+			System.out.println("[1]:読み込み,[2]:書き込み,[3]:新規作成,[9]終了");
 			//入力メニューの数値判定
 			try{
 				BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
@@ -130,7 +131,8 @@ public class KisoKadai3{
 				} catch (IOException e) {
 				System.out.println(e);
 				}
-			}//新規作成
+			}
+			//新規作成
 			else if(n==3){
 				try{
 					System.out.println("選択して下さい");
@@ -192,34 +194,8 @@ public class KisoKadai3{
 				}catch(IOException e){
 					System.out.println(e);
 					}
-			}//一覧表示
-			else if(n==4){
-				try{
-					System.out.println("一覧を表示したいフォルダを指定して下さい,[0]:メニューに戻る");
-					System.out.println("ファイルは[F]、ディレクトリは[D]と表示されます");
-					System.out.println("例:c:\\xxx\\xx");
-					BufferedReader br8=new BufferedReader(new InputStreamReader(System.in));
-					dir_name=br8.readLine();
-					if(("0".equals(dir_name))){
-						continue;
-					}
-					File dir = new File(dir_name);
-					File[] files = dir.listFiles();
-					for (int i = 0; i < files.length; i++) {
-						@SuppressWarnings("unused")
-						File file = files[i];
-						if(files[i].isFile()){
-							System.out.println("[F]" + files[i].getName());
-						}else if(files[i].isDirectory()){
-								System.out.println("[D]"+files[i].getName());
-						}else{
-							System.out.println("[?]" + files[i].getName());
-						}
-					}
-				}catch(IOException e){
-					System.out.println(e);
-				}
 			}
+			//終了
 			else if(n==9){
 				System.out.println("作業を終了します");
 				System.out.println("ありがとうございました");
