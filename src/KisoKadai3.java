@@ -95,10 +95,10 @@ public class KisoKadai3{
 					}else{
 						System.out.println("半角数字で入力して下さい");
 					}
-					System.out.println("書き込む内容を入力して下さい,[0]:メニューに戻る");
 					//上書き処理
 					if(num==1){
 						try{
+							System.out.println("書き込む内容を入力して下さい,[0]:メニューに戻る");
 							PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(file,false)));
 							BufferedReader br4=new BufferedReader(new InputStreamReader(System.in));
 							write=br4.readLine();
@@ -114,6 +114,7 @@ public class KisoKadai3{
 						//追記処理
 					}else if(num==2){
 						try{
+							System.out.println("書き込む内容を入力して下さい,[0]:メニューに戻る");
 							PrintWriter pw=new PrintWriter(new BufferedWriter(new FileWriter(file,true)));
 							BufferedReader br4=new BufferedReader(new InputStreamReader(System.in));
 							write=br4.readLine();
@@ -126,7 +127,9 @@ public class KisoKadai3{
 						}catch (IOException e) {
 							System.out.println(e);//例外エラー
 						}
-					} else {
+					}else{
+						System.out.println("メニューに表示されている数値から選択して下さい");
+						continue;
 					}
 				} catch (IOException e) {
 				System.out.println(e);
@@ -190,7 +193,10 @@ public class KisoKadai3{
 							System.out.println("ディレクトリの作成に失敗しました");
 						}
 						}
-						}
+					}else{
+						System.out.println("メニューに表示されている数値から選択して下さい");
+						continue;
+					}
 				}catch(IOException e){
 					System.out.println(e);
 					}
